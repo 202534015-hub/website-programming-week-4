@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informasi Kepulauan Kei</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <a class="lewati" href="#konten">Lewati ke konten utama</a>
+
+  <h1>Informasi Kepulauan Kei</h1>
+  <p>Mengenal keindahan alam dan wisata Kepulauan Kei, Maluku Tenggara.</p>
+
+  <nav aria-label="Navigasi utama">
+    <ul class="nav-list">
+      <li><a class="nav-link" href="#tentang">Tentang Kei</a></li>
+      <li><a class="nav-link" href="#wisata">Wisata</a></li>
+      <li><a class="nav-link" href="#sejarah">Sejarah</a></li>
+      <li><a class="nav-link" href="#pesan">Pesan</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-layout">
+
+  <main id="konten">
+
+    <article id="tentang">
+      <h2>Tentang Kepulauan Kei</h2>
+
+      <p>
+        Kepulauan Kei adalah gugusan pulau di kawasan tenggara
+        Kepulauan Maluku yang termasuk Provinsi Maluku, Indonesia.
+      </p>
+
+      <p>
+        Kepulauan Kei memiliki keindahan alam, pantai, laut,
+        serta kehidupan masyarakat yang erat dengan lingkungan pesisir.
+      </p>
+    </article>
+
+    <section id="wisata">
+      <h2>Destinasi Wisata</h2>
+
+      <div class="card-list">
+
+        <article class="card card--featured">
+          <span class="badge">Unggulan</span>
+
+          <h3>Pantai Ngurbloat</h3>
+
+          <img
+            src="images/ngurbloat.jpg"
+            alt="Pantai Ngurbloat di Desa Ngilngof dengan pasir putih"
+          >
+
+          <p>
+            Pantai Ngurbloat terletak di Desa Ngilngof, Kabupaten
+            Maluku Tenggara. Pantai ini dikenal dengan pasirnya
+            yang sangat halus dan pemandangan lautnya.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Goa Hawang</h3>
+
+          <img
+            src="images/goahawang.jpg"
+            alt="Goa Hawang dengan kolam air jernih berwarna biru kehijauan"
+          >
+
+          <p>
+            Goa Hawang atau Lian Hawang terletak di Desa Letvuan.
+            Goa ini memiliki kolam air alami yang jernih dan
+            berwarna biru kehijauan.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Keindahan Laut Kei</h3>
+
+          <p>
+            Perairan Kepulauan Kei memiliki keindahan laut dan
+            lingkungan pesisir yang menjadi bagian penting dari
+            kehidupan masyarakat setempat.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="sejarah">
+      <h2>Sejarah dan Masyarakat</h2>
+
+      <h3>Kepulauan Rempah-rempah</h3>
+
+      <p>
+        Kepulauan Maluku sejak dahulu dikenal sebagai kawasan
+        rempah-rempah yang menghasilkan pala, fuli, dan cengkeh.
+      </p>
+
+      <h3>Kehidupan Masyarakat</h3>
+
+      <p>
+        Kehidupan masyarakat Kei memiliki hubungan erat dengan
+        lingkungan laut dan pesisir sebagai bagian dari kehidupan
+        masyarakat kepulauan.
+      </p>
+    </section>
+
+    <section id="pesan">
+      <h2>Kirim Pesan</h2>
+
+      <p>Kolom bertanda * wajib diisi.</p>
+
+      <form action="#pesan" method="post">
+
+        <p>
+          <label for="nama">Nama lengkap *</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            autocomplete="name"
+            required
+          >
+        </p>
+
+        <p>
+          <label for="email">Alamat email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+          >
+        </p>
+
+        <p>
+          <label for="topik">Topik *</label>
+          <select id="topik" name="topik" required>
+            <option value="">Pilih topik</option>
+            <option value="wisata">Wisata</option>
+            <option value="sejarah">Sejarah</option>
+            <option value="budaya">Budaya</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="isi-pesan">Pesan *</label>
+          <textarea
+            id="isi-pesan"
+            name="pesan"
+            autocomplete="off"
+            required
+          ></textarea>
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="setuju"
+            name="persetujuan"
+            value="setuju"
+            required
+          >
+          <label for="setuju">Saya menyetujui informasi yang dikirim *</label>
+        </p>
+
+        <button type="submit">Kirim Pesan</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <aside aria-labelledby="info-tambahan">
+    <h2 id="info-tambahan">Informasi Tambahan</h2>
+
+    <p>
+      Kepulauan Kei berada di Maluku Tenggara dan dikenal
+      dengan keindahan pantai serta lingkungan lautnya.
+    </p>
+  </aside>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Informasi Kepulauan Kei - Maluku Tenggara</p>
+</footer>
+
+</body>
+</html>
