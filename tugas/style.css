@@ -1,8 +1,3 @@
-/* ================================
-   SISTEM VISUAL — TUGAS 3
-   MODERN CSS LAYOUT — PRAKTIKUM 4
-   ================================ */
-
 *,
 *::before,
 *::after {
@@ -102,6 +97,7 @@ p {
 .page-layout {
   width: min(100% - 2rem, 70rem);
   margin-inline: auto;
+
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
@@ -115,14 +111,16 @@ p {
 
 .page-layout > aside {
   flex: 1 1 16rem;
+  min-width: 0;
   padding: var(--space-2);
+
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
 }
 
 /* ================================
-   CARD LIST
+   CARD LIST — FLEXBOX
    ================================ */
 
 .card-list {
@@ -133,6 +131,7 @@ p {
 
 .card-list > .card {
   flex: 1 1 16rem;
+  min-width: 0;
 }
 
 /* ================================
@@ -140,14 +139,13 @@ p {
    ================================ */
 
 .card {
-  width: 100%;
   min-width: 0;
   overflow: hidden;
+
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-2);
-  margin-block-end: var(--space-2);
 }
 
 .card img {
@@ -158,6 +156,10 @@ p {
   border-radius: var(--radius);
 }
 
+/* ================================
+   BADGE — POSITIONING
+   ================================ */
+
 .card--featured {
   position: relative;
   padding-block-start: 3rem;
@@ -167,26 +169,11 @@ p {
   position: absolute;
   inset-block-start: 0.75rem;
   inset-inline-end: 0.75rem;
+
   padding: 0.25rem 0.5rem;
   color: #ffffff;
   background: var(--color-primary);
   border-radius: var(--radius);
-}
-
-/* ================================
-   TABLE
-   ================================ */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: var(--space-1);
-  border: 1px solid var(--color-border);
-  text-align: left;
 }
 
 /* ================================
@@ -212,6 +199,7 @@ select {
   width: 100%;
   max-width: 32rem;
   padding: 0.75rem;
+
   border: 1px solid var(--color-border);
   border-radius: 0.25rem;
 }
@@ -223,10 +211,12 @@ select {
 button {
   margin-block-start: var(--space-2);
   padding: 0.75rem 1rem;
+
   color: #ffffff;
   background-color: var(--color-primary);
   border: 0;
   border-radius: 0.25rem;
+
   cursor: pointer;
 }
 
@@ -239,6 +229,10 @@ input[type="checkbox"] + label {
   display: inline;
   margin-block-start: 0;
 }
+
+/* ================================
+   FOCUS KEYBOARD
+   ================================ */
 
 input:focus-visible,
 textarea:focus-visible,
