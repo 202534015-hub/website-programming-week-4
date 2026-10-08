@@ -2,10 +2,14 @@
 
 ## 1. Informasi
 
-**Nama:** Leo Sudarso Welerubun  
-**Mata Kuliah:** Pemrograman Website  
-**Praktikum:** Tugas 4 — Layout Fleksibel  
-**Repository:** `website-programming-week-4`  
+**Nama:** Leo Sudarso Welerubun
+
+**Mata Kuliah:** Pemrograman Website
+
+**Praktikum:** Tugas 4 — Layout Fleksibel
+
+**Repository:** `website-programming-week-4`
+
 **Folder:** `tugas/`
 
 ---
@@ -71,286 +75,326 @@ Hasil pengujian:
 
 Badge menggunakan kombinasi:
 
-```css
-.card--featured {
-  position: relative;
-}
+    .card--featured {
+      position: relative;
+    }
 
-.badge {
-  position: absolute;
-}
+    .badge {
+      position: absolute;
+    }
 
-6. Bukti 5 — Pengujian Keyboard
+![Bukti badge zoom 200%](images/evidence-4-badge-zoom-200.png)
 
-Pengujian keyboard dilakukan menggunakan tombol Tab untuk memastikan fokus berpindah secara logis.
+---
+
+## 6. Bukti 5 — Pengujian Keyboard
+
+Pengujian keyboard dilakukan menggunakan tombol `Tab` untuk memastikan fokus berpindah secara logis.
 
 Hal yang diperiksa:
 
-Fokus keyboard terlihat dengan jelas.
-Urutan fokus mengikuti struktur dokumen.
-Link navigasi dapat menerima fokus.
-Input form dapat menerima fokus.
-Tombol dapat menerima fokus.
-Tidak ada elemen interaktif yang dilewati secara tidak logis.
+- Fokus keyboard terlihat dengan jelas.
+- Urutan fokus mengikuti struktur dokumen.
+- Link navigasi dapat menerima fokus.
+- Input form dapat menerima fokus.
+- Tombol dapat menerima fokus.
+- Tidak ada elemen interaktif yang dilewati secara tidak logis.
 
-Bukti berupa rangkaian screenshot pengujian keyboard akan ditambahkan setelah seluruh pengujian keyboard selesai dilakukan.
+![Bukti pengujian keyboard](images/evidence-5-keyboard.png)
 
-7. Pengujian Responsive dan Overflow
+---
+
+## 7. Pengujian Responsive dan Overflow
 
 Salah satu masalah yang ditemukan pada proses penyempurnaan layout adalah penggunaan ukuran card yang kurang sesuai dengan sistem Flexbox.
 
 Perbaikan yang dilakukan:
 
-Menghapus width: 100% pada .card.
-Menggunakan flex: 1 1 16rem pada card.
-Menggunakan gap sebagai pengatur jarak antar-card.
-Menambahkan min-width: 0 pada flex item.
-Memastikan gambar menggunakan max-width: 100%.
-Memastikan teks panjang dapat melakukan wrapping.
+- Menghapus `width: 100%` pada `.card`.
+- Menghapus `margin-block-end` pada `.card`.
+- Menggunakan `flex: 1 1 16rem` pada card.
+- Menggunakan `gap` sebagai pengatur jarak antar-card.
+- Menambahkan `min-width: 0` pada flex item.
+- Memastikan gambar menggunakan `max-width: 100%`.
+- Memastikan teks panjang dapat melakukan wrapping.
 
 CSS yang digunakan:
 
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
 
-.card-list > .card {
-  flex: 1 1 16rem;
-  min-width: 0;
-}
+    .card-list > .card {
+      flex: 1 1 16rem;
+      min-width: 0;
+    }
 
-.card {
-  min-width: 0;
-  overflow: hidden;
-}
+    .card {
+      min-width: 0;
+      overflow: hidden;
+    }
 
 Perbaikan tersebut membuat card dapat menyesuaikan ruang yang tersedia tanpa menyebabkan horizontal overflow pada layout utama.
 
-8. Source Order
+---
+
+## 8. Source Order
 
 Struktur HTML tetap mengikuti urutan sumber dokumen.
 
 Tidak digunakan:
 
-order
-flex-direction: row-reverse
-flex-direction: column-reverse
-float untuk layout utama.
+- `order`
+- `flex-direction: row-reverse`
+- `flex-direction: column-reverse`
+- `float` untuk layout utama.
 
 Urutan konten tetap mengikuti struktur HTML sehingga urutan visual dan struktur dokumen tetap konsisten.
 
-9. Layout Main dan Aside
+---
+
+## 9. Layout Main dan Aside
 
 Layout utama menggunakan Flexbox:
 
-.page-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
+    .page-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
 
-main menggunakan ukuran fleksibel:
+`main` menggunakan ukuran fleksibel:
 
-.page-layout > main {
-  flex: 1 1 36rem;
-  min-width: 0;
-}
+    .page-layout > main {
+      flex: 1 1 36rem;
+      min-width: 0;
+    }
 
-aside juga menggunakan ukuran fleksibel:
+`aside` juga menggunakan ukuran fleksibel:
 
-.page-layout > aside {
-  flex: 1 1 16rem;
-  min-width: 0;
-}
+    .page-layout > aside {
+      flex: 1 1 16rem;
+      min-width: 0;
+    }
 
 Pada viewport lebar, kedua elemen dapat berada berdampingan.
 
 Pada viewport sempit, keduanya berubah menjadi satu kolom melalui media query.
 
-10. Card Layout
+---
+
+## 10. Card Layout
 
 Daftar card menggunakan Flexbox:
 
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
 
 Setiap card menggunakan:
 
-.card-list > .card {
-  flex: 1 1 16rem;
-  min-width: 0;
-}
+    .card-list > .card {
+      flex: 1 1 16rem;
+      min-width: 0;
+    }
 
 Dengan pengaturan tersebut, tiga card dapat menyesuaikan ukuran ruang yang tersedia.
 
-11. Badge Positioning
+---
+
+## 11. Badge Positioning
 
 Badge pada card unggulan menggunakan positioning.
 
 Parent:
 
-.card--featured {
-  position: relative;
-}
+    .card--featured {
+      position: relative;
+    }
 
 Badge:
 
-.badge {
-  position: absolute;
-  inset-block-start: 0.75rem;
-  inset-inline-end: 0.75rem;
-}
+    .badge {
+      position: absolute;
+      inset-block-start: 0.75rem;
+      inset-inline-end: 0.75rem;
+    }
 
-position: relative pada card digunakan sebagai acuan posisi untuk elemen badge yang menggunakan position: absolute.
+`position: relative` pada card digunakan sebagai acuan posisi untuk elemen badge yang menggunakan `position: absolute`.
 
 Padding bagian atas card juga diperbesar agar badge tidak menutupi judul:
 
-.card--featured {
-  padding-block-start: 3rem;
-}
-12. Navigasi Flexbox
+    .card--featured {
+      padding-block-start: 3rem;
+    }
+
+---
+
+## 12. Navigasi Flexbox
 
 Navigasi menggunakan Flexbox dan dapat melakukan wrapping:
 
-.nav-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-}
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1);
+    }
 
-Penggunaan flex-wrap: wrap memungkinkan link navigasi berpindah ke baris berikutnya ketika ruang horizontal tidak mencukupi.
+Penggunaan `flex-wrap: wrap` memungkinkan link navigasi berpindah ke baris berikutnya ketika ruang horizontal tidak mencukupi.
 
-13. Media dan Konten Responsif
+---
+
+## 13. Media dan Konten Responsif
 
 Gambar dibuat responsif menggunakan:
 
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
 
 Gambar pada card juga menggunakan:
 
-.card img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
+    .card img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
 
 Dengan demikian, media tidak melebihi batas container.
 
 Teks panjang juga diberikan aturan:
 
-a,
-p {
-  overflow-wrap: anywhere;
-}
-14. Responsive Reflow
+    a,
+    p {
+      overflow-wrap: anywhere;
+    }
+
+---
+
+## 14. Responsive Reflow
 
 Media query digunakan untuk mengubah layout ketika viewport menjadi sempit:
 
-@media (max-width: 48rem) {
-  .page-layout > main,
-  .page-layout > aside {
-    flex-basis: 100%;
-  }
+    @media (max-width: 48rem) {
+      .page-layout > main,
+      .page-layout > aside {
+        flex-basis: 100%;
+      }
 
-  .card-list > .card {
-    flex-basis: 100%;
-  }
-}
+      .card-list > .card {
+        flex-basis: 100%;
+      }
+    }
 
 Hasilnya:
 
-main dan aside menjadi satu kolom.
-Card menjadi satu kolom.
-Konten tetap dapat dibaca pada layar sempit.
-15. Keyboard Focus
+- `main` dan `aside` menjadi satu kolom.
+- Card menjadi satu kolom.
+- Konten tetap dapat dibaca pada layar sempit.
 
-Indikator fokus tetap dipertahankan menggunakan :focus-visible.
+---
+
+## 15. Keyboard Focus
+
+Indikator fokus dipertahankan menggunakan `:focus-visible`.
 
 Contoh:
 
-.nav-link:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 3px;
-}
+    .nav-link:focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 3px;
+    }
 
 Elemen form dan tombol juga memiliki indikator fokus:
 
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 3px;
-}
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 3px;
+    }
 
 Hal ini membantu pengguna keyboard mengetahui elemen yang sedang mendapatkan fokus.
 
-16. Struktur Semantik
+---
+
+## 16. Struktur Semantik
 
 Struktur HTML tetap menggunakan elemen semantik seperti:
 
-<header>
-<nav>
-<main>
-<article>
-<section>
-<aside>
-<form>
-<footer>
+- `<header>`
+- `<nav>`
+- `<main>`
+- `<article>`
+- `<section>`
+- `<aside>`
+- `<form>`
+- `<footer>`
 
 Struktur tersebut dipertahankan agar layout fleksibel tidak menghilangkan struktur semantik yang sudah dibuat pada praktikum sebelumnya.
 
-17. Pengujian Tambahan
+---
 
-Pengujian yang dilakukan atau akan dilakukan:
+## 17. Pengujian Tambahan
 
-Wide viewport.
-Viewport sekitar 320 CSS px.
-Flexbox overlay menggunakan DevTools.
-Zoom browser 200%.
-Pengujian keyboard menggunakan tombol Tab.
-Pemeriksaan horizontal overflow.
-Pemeriksaan Console DevTools.
-Pemeriksaan Network DevTools.
-Pemeriksaan validitas HTML menggunakan Nu HTML Checker.
+Pengujian yang dilakukan atau diperiksa meliputi:
 
-Hasil pengujian tambahan akan dilengkapi setelah seluruh pemeriksaan selesai.
+- Wide viewport.
+- Viewport sekitar 320 CSS px.
+- Flexbox overlay menggunakan DevTools.
+- Zoom browser 200%.
+- Pengujian keyboard menggunakan tombol `Tab`.
+- Pemeriksaan horizontal overflow.
 
-18. Git History
+Pemeriksaan tambahan seperti Console DevTools, Network DevTools, dan validitas HTML menggunakan Nu HTML Checker dilakukan sebagai bagian dari verifikasi akhir apabila diperlukan.
 
-Bukti git log --oneline akan ditambahkan setelah seluruh proses commit selesai.
+---
 
-Perintah yang digunakan:
+## 18. Bukti 6 — Git History
 
-git log --oneline
+Git history diperiksa menggunakan perintah:
 
-Bukti screenshot hasil Git history akan digunakan untuk menunjukkan proses pengerjaan dan jumlah commit.
+    git log --oneline
 
-19. Kesimpulan
+Hasil menunjukkan proses pengerjaan Tugas 4 memiliki beberapa commit yang menggambarkan tahapan pengerjaan.
+
+Urutan commit yang terlihat:
+
+    f8e3755 Menyempurnakan layout dan dokumentasi Tugas 4
+    8da5228 Menambahkan struktur awal Tugas 4
+    7b2856a Menyiapkan Praktikum 4 Modern CSS Layout
+
+Bukti hasil perintah `git log --oneline`:
+
+![Bukti Git History](images/evidence-6-git-log.png)
+
+History Git digunakan untuk menunjukkan bahwa pengerjaan dilakukan secara bertahap dan perubahan didokumentasikan melalui commit.
+
+---
+
+## 19. Kesimpulan
 
 Tugas 4 menggunakan Flexbox sebagai dasar layout fleksibel.
 
 Implementasi utama meliputi:
 
-Flexbox pada navigasi.
-Flexbox pada layout main dan aside.
-Flexbox pada daftar card.
-flex-wrap untuk responsive reflow.
-gap untuk jarak antar-elemen.
-flex-basis untuk ukuran fleksibel.
-min-width: 0 untuk membantu mencegah overflow.
-position: relative dan position: absolute untuk badge.
-Responsive media.
-Visual order mengikuti source order.
-Tidak menggunakan order, reverse layout, atau float untuk layout utama.
-Indikator keyboard focus tetap dipertahankan.
+- Flexbox pada navigasi.
+- Flexbox pada layout `main` dan `aside`.
+- Flexbox pada daftar card.
+- `flex-wrap` untuk responsive reflow.
+- `gap` untuk jarak antar-elemen.
+- `flex-basis` untuk ukuran fleksibel.
+- `min-width: 0` untuk membantu mencegah overflow.
+- `position: relative` dan `position: absolute` untuk badge.
+- Responsive media.
+- Visual order mengikuti source order.
+- Tidak menggunakan `order`, reverse layout, atau float untuk layout utama.
+- Indikator keyboard focus tetap dipertahankan.
