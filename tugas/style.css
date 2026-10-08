@@ -1,0 +1,284 @@
+/* ================================
+   SISTEM VISUAL — TUGAS 3
+   MODERN CSS LAYOUT — PRAKTIKUM 4
+   ================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #1d4ed8;
+  --color-text: #1f2937;
+  --color-muted: #4b5563;
+  --color-surface: #ffffff;
+  --color-border: #d1d5db;
+  --color-focus: #f59e0b;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  --radius: 0.5rem;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: #f8fafc;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+header,
+footer {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+header {
+  padding-block: var(--space-3);
+}
+
+footer {
+  padding-block: var(--space-3);
+  color: var(--color-muted);
+}
+
+main {
+  padding-block: var(--space-3);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+p {
+  max-width: 65ch;
+}
+
+/* ================================
+   NAVIGASI FLEXBOX
+   ================================ */
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--color-primary);
+  padding: var(--space-1);
+  text-underline-offset: 0.2em;
+}
+
+.nav-link:hover {
+  color: #1e3a8a;
+  text-decoration-thickness: 0.15em;
+}
+
+.nav-link:active {
+  color: #b45309;
+}
+
+.nav-link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ================================
+   LAYOUT MAIN + ASIDE
+   ================================ */
+
+.page-layout {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.page-layout > main {
+  flex: 1 1 36rem;
+  min-width: 0;
+}
+
+.page-layout > aside {
+  flex: 1 1 16rem;
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+/* ================================
+   CARD LIST
+   ================================ */
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.card-list > .card {
+  flex: 1 1 16rem;
+}
+
+/* ================================
+   CARD
+   ================================ */
+
+.card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  margin-block-end: var(--space-2);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.card--featured {
+  position: relative;
+  padding-block-start: 3rem;
+}
+
+.badge {
+  position: absolute;
+  inset-block-start: 0.75rem;
+  inset-inline-end: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  color: #ffffff;
+  background: var(--color-primary);
+  border-radius: var(--radius);
+}
+
+/* ================================
+   TABLE
+   ================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: var(--space-1);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+/* ================================
+   FORM
+   ================================ */
+
+label {
+  display: block;
+  margin-block-start: var(--space-2);
+  font-weight: 600;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+
+select {
+  background-color: var(--color-surface);
+}
+
+button {
+  margin-block-start: var(--space-2);
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-inline-end: 0.5rem;
+}
+
+input[type="checkbox"] + label {
+  display: inline;
+  margin-block-start: 0;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.lewati:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ================================
+   RESPONSIVE / REFLOW
+   ================================ */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+a,
+p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 48rem) {
+  .page-layout > main,
+  .page-layout > aside {
+    flex-basis: 100%;
+  }
+
+  .card-list > .card {
+    flex-basis: 100%;
+  }
+}
